@@ -8,7 +8,7 @@
    1. [Amdahl定律----优化最有显著作用部分的法则，评测的优化效果的基准](./theory/Amdahl_Law.md "优化理论" )
 2. 剖析工具教程
    1. [Snapdragon剖析器的使用教程](./tool/Snapdragon_Profier_Tutorial/SnapdragonProfiler_Tutorial_01.md "")
-   2. [用Instruments做Unity在iOS平台的性能调试](./tool/Profile_Unity_Game_in_XcodeInstruments/Profile_Unity_Game_in_XcodeInstruments.md "")
+   2. [用Instruments做Unity在iOS平台的性能调试](./tool/Profile_Unity_Game_in_XcodeInstruments/Profile_Unity_Game_in_XcodeInstruments_.md "")
    3. [Unity Profiler使用说明](./tool/Unity_Profiler_Tutorial_01/Unity_Profiler_Tutorial_01.md "")
    4. [对比Unity Profiler工具与Xcode Instruments的优缺点](./tool/Diff_by_Unity_Profiler_and_Xcode_Instruments/Diff_by_Unity_Profiler_and_Xcode_Instruments.md "")
 3. 通用优化手段
