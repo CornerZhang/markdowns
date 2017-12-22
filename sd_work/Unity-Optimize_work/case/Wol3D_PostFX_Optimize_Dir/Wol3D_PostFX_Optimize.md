@@ -35,7 +35,7 @@ Pass {
 
 ### 文件结构：
 
-![file_structure](file_structure.png)
+![file_structure](file_structure.jpg)
 
 ## 关注点1
 
@@ -47,7 +47,7 @@ Pass {
 
 所有的操作集中在两个shader文件里(Blur.shader, PostProcess.shader)，其它的是被以\*.cginc方式include进来。代码中有用到
 
-![pfx_shader_entry](pfx_shader_entry.png)
+![pfx_shader_entry](pfx_shader_entry.jpg)
 
 我想能否把两个shader并一个去可以减少content切换的想法立马就没了，因为官方文档里有提到，一旦用\#pragma\_compile，Unity就会为多个keyword路劲，产生他们的交叉组合的着色器，其数量取决于keyword的多少，这就意味着我那点的减少一两次的content切换，多于项目中用了6个keyword产生的组合（实际有6x6 个shader）来说，是无济于事的。这不是用C++写引擎的时候，可以轻易改动Unity底层的。
 
@@ -59,7 +59,7 @@ Shader中if，for内部是否存在慢速操作？是否可以替换，或是可
 
 -   只有一处大量使用if的void InterpolateRay(inout v2f o, appdata\_img v)函数，仔细一看，抖机灵的程序员早就优化了，所有if else 里处理的都是一个简单的int临时变量，然后于函数结尾处，if分支外部集中处理，用那个int index做数组下标索引，具体代码如下：
 
-    ![interpolatedRay](interpolatedRay.png)
+    ![interpolatedRay](interpolatedRay.jpg)
 
     值得赞许的优化！我没活了....
 
@@ -121,15 +121,15 @@ Unity5已经可以用SetFloatArray(... )传递浮点数组和SetVectorArray(...)
 
 > C\#代码里如下定义:
 >
-> ![FogParam_shader](FogParam_shader.png)
+> ![FogParam_shader](FogParam_shader.jpg)
 >
 > C\#里如下使用:
 >
-> ![FogParam_csharp](FogParam_csharp.png)
+> ![FogParam_csharp](FogParam_csharp.jpg)
 >
 > Shader里如下定义参数 \_FogParam\[8\]:
 >
-> ![FogParam_Args](FogParam_Args.png)
+> ![FogParam_Args](FogParam_Args.jpg)
 >
 > 这么做了后，在一些机器上会有些许性能提升。
 

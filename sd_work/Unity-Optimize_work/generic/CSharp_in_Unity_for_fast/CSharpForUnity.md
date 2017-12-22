@@ -44,7 +44,7 @@ internal void OnTimer()
 
 当Transform包含不该有的孩子Transform或其他组件时，为该Transform进行position、rotation赋值，会引起消耗，特别是包含粒子系统的时候。
 
-![unity_object_null](tran_01.png)
+![unity_object_null](tran_01.jpg)
 
 对Transform进行rotation赋值时，由于其孩子包含粒子系统所产生的消耗
 但考虑到切换Transform的parent本身也会有消耗，因此，我们对此也应有“从热变冷”的过程：“刚刚不使用”依然保留在父亲Transform里；只有“不使用一段时间”的GameObject，才从父亲Transform移出。
@@ -101,7 +101,7 @@ this.MoreLogInfo("writerSize=" + writer.Position, "channelId=" + channelId);
 
 因为Unity overwrite掉了Object.Equals()，《CUSTOM == OPERATOR, SHOULD WE KEEP IT?》也说过unityEngineObject==null事实上和GetComponent()的消耗类似，都涉及到Engine层面的机制调用，所以UnityEngine.Object的null比较，都会有少许的性能消耗。对于基础功能、调用栈叶子节点逻辑、高频功能，我们应少null比较，使用assertion来处理。只有在调用栈根节点逻辑，有必要的时候，才进行null比较。
 
-![unity_object_null](unity_object_null.png)
+![unity_object_null](unity_object_null.jpg)
 
 上面C#代码对应的IL2CPP代码
 
@@ -127,6 +127,6 @@ private static extern ApolloResult apollo_connector_readUdpData(UInt64 objId, /*
 
 注释前后的IL2CPP代码如下图，右侧明显避免了marhal的产生。
 
-![marshall](marshall.png)
+![marshall](marshall.jpg)
 
 

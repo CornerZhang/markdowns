@@ -16,7 +16,7 @@
 
 Unity Profiler能定量地找到C#的GC Alloc问题；其Timeline视图也能从地整体（但不太定量）找到CPU瓶颈。
 
-![UnityProfiler](UnityProfiler.png)
+![UnityProfiler](UnityProfiler.jpg)
 
 Unity Timeline Profiler
 
